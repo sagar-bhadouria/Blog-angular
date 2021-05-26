@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <app-blog-card
+      *ngFor="let blog of blogs"
+      [routerLink]="['blog', blog?.slug]"
+      [blog]="blog"
+      class="card pointer mt-4 shadow p-3 bg-white rounded col-md-5 col-sm-12"
+      style="margin-right: 6px; height: 300px"
+      (onDeleteBlog)="deleteBlog(blog)"
+    ></app-blog-card>
+  </div>
+</div>

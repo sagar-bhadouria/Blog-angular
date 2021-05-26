@@ -1,0 +1,25 @@
+<div class="container w-75">
+  <h2 class="mb-1 mt-4">
+    {{ blog?.title }}
+  </h2>
+  <div class="mb-2 text-muted">Posted On: {{ blog?.createdAt }}</div>
+  <a
+    routerLink="/"
+    class="btn btn-secondary"
+    [ngStyle]="{ 'margin-right': '4px' }"
+    >All Blogs</a
+  >
+  <a
+    [routerLink]="['/blog-edit', blog?._id]"
+    class="btn btn-info"
+    [ngStyle]="{ 'margin-right': '4px' }"
+    >Edit</a
+  >
+  <a (click)="deleteBlog(blog?._id || '')" class="btn btn-danger">Delete</a>
+  <div class="card mt-3">
+    <div
+      [innerHtml]="blog?.sanitizedHtml"
+      class="card-body shadow rounded"
+    ></div>
+  </div>
+</div>
